@@ -134,16 +134,12 @@ CHRONICLE_BUCKET="cortex-xdr-events-destination-09302024" #the GCS bucket you cr
       
 ```bash
 gcloud storage buckets add-iam-policy-binding $CHRONICLE_BUCKET \
-
-    --member='serviceAccount:$CORTEX_EMAIL' \
-
+    --member=serviceAccount:$CORTEX_EMAIL \
     --role='roles/storage.objectAdmin'
 
 
 gcloud storage buckets add-iam-policy-binding $CHRONICLE_BUCKET \
-
-    --member='serviceAccount:$CORTEX_EMAIL' \
-
+    --member=serviceAccount:$CORTEX_EMAIL \
     --role='roles/storage.legacyBucketReader
 ```
 
