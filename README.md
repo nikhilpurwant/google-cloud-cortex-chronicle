@@ -133,14 +133,15 @@ CHRONICLE_BUCKET="cortex-xdr-events-destination-09302024" #the GCS bucket you cr
 
       
 ```bash
-gcloud storage buckets add-iam-policy-binding $CHRONICLE_BUCKET \
+gcloud storage buckets add-iam-policy-binding gs://$CHRONICLE_BUCKET \
     --member=serviceAccount:$CORTEX_EMAIL \
     --role='roles/storage.objectAdmin'
 
 
-gcloud storage buckets add-iam-policy-binding $CHRONICLE_BUCKET \
+gcloud storage buckets add-iam-policy-binding gs://$CHRONICLE_BUCKET \
     --member=serviceAccount:$CORTEX_EMAIL \
-    --role='roles/storage.legacyBucketReader
+    --role='roles/storage.legacyBucketReader'
+    
 ```
 
 - Also, provide the chronicle service  account created during feed creation of the Storage Object Viewer (roles/storage.objectViewer), use the below gcloud command, and replace the <chronicle-service-account> with the value of the service account name you got from the Chronicle feed creation.
